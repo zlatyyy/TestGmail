@@ -22,23 +22,20 @@ public class LoginPage {
 	WebDriver driver=new FirefoxDriver(myprofile);
 	WebDriverWait wait = new WebDriverWait(driver, 25);
 @Before
-public void OpenAccount(){	
-	
+public void OpenAccount(){		
 	driver.get("http://gmail.com");
 	driver.findElement(By.id("Passwd")).sendKeys("whisky850203");
-	driver.findElement(By.id("next")).click();
-	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("Passwd")));
+	driver.findElement(By.id("signIn")).click();
 }
 @Test
 public void SearchSeartunBrief(){
-	driver.findElement(By.id("signIn")).click();
 	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	assertTrue("",driver.findElement(By.cssSelector("div.T-I.J-J5-Ji.T-I-KE.L3")).isEnabled());
 	WebElement unreadEmail=driver.findElement(By.xpath("//*[contains(text(),'unread')]"));
 if(unreadEmail.isEnabled())
 	{
 	if(driver.findElement(By.xpath("//*[contains(text(),'UniCredit Bulbank')]")).isEnabled()){
-		driver.findElement(By.xpath("//span[contains(text(),'UniCredit Bulbank')]")).click();
+		driver.findElement(By.xpath("//span[contains(text(),'UniCredit Bulbank')]")).getText();
 	}
 	};	
 }
