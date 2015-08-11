@@ -23,6 +23,7 @@ public class LoginPage {
 	WebDriverWait wait = new WebDriverWait(driver, 25);
 @Before
 public void OpenAccount(){	
+	//sr
 	driver.get("http://gmail.com");
 	driver.findElement(By.id("Passwd")).sendKeys("whisky850203");
 	driver.findElement(By.id("next")).click();
